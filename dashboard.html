@@ -1,0 +1,13 @@
+<script type="module">
+    import { auth } from './js/firebase.js';
+    import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js';
+  
+    onAuthStateChanged(auth, user => {
+      if (!user) {
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+<h3 id="user-points">Points: Loading...</h3>
+  
